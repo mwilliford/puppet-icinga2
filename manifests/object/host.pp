@@ -17,6 +17,7 @@ define icinga2::object::host (
   $template_to_import = 'generic-host',
   $groups = [],
   $vars = {},
+  $vars2= {},
   $check_command = undef,
   $max_check_attempts = undef,
   $check_period = undef,
@@ -53,6 +54,7 @@ define icinga2::object::host (
   validate_string($ipv4_address)
   validate_array($groups)
   validate_hash($vars)
+  validate_hash($vars2)
   validate_string($target_dir)
   validate_string($target_file_name)
   validate_string($target_file_owner)

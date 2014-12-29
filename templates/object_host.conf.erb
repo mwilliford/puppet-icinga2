@@ -33,6 +33,11 @@ object Host "<%= @object_hostname %>" {
   vars.<%= key %> = "<%= value %>"
   <%- end -%>
   <%- end -%>
+  <%- if @vars2.empty? != true  -%>
+  <%- @vars2.each_pair do |key, value| -%>
+  vars.<%= key %> = <%= value %>
+  <%- end -%>
+  <%- end -%>
   <%- if @check_command -%>
   check_command = "<%= @check_command -%>"
   <%- end -%>
